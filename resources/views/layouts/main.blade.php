@@ -8,14 +8,30 @@
     <link rel="stylesheet" href="css/styledit.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
+<style>
+    /*Navbar toggler hamburger*/
+    .navbar-toggler-icon {
+        color:azure
+    }
+</style>
 <body>
- @include( 'partials.navbar' )
+@include( 'partials.navbar' )
 
-      <!-- Main -->
-      <div class="container mt -4">
+    <!-- Main -->
+    <div class="container mt -4">
         @yield('container')
         </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous">
+        function confirmDelete(id) {
+    if (confirm('Apakah Anda yakin akan menghapus data ini?')) {
+        // Jika konfirmasi diterima, lakukan penghapusan (bisa menggunakan AJAX atau langsung redirect ke route delete)
+        window.location.href = '/product/' + id + '/destroy'; // Ganti URL dengan URL yang sesuai pada Laravel Anda
+    } else {
+        // Jika konfirmasi ditolak, tidak lakukan apa-apa
+        return false;
+    }
+}
+    </script>
 </body>
 </html>

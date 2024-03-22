@@ -55,9 +55,9 @@
         @else
         <div class="h6 pb-0 mb-4 text-danger border-bottom border-danger">
             <p><h5>Tidak ada produk yang sesuai.</h5> </p>
-          </div>
-          <br>
-          <a class="btn btn-danger" href="/prsoduct" role="button">Kembali</a>
+        </div>
+        <br>
+        <a class="btn btn-danger" href="/product" role="button">Kembali</a>
         @endif
     </div>
 </div>

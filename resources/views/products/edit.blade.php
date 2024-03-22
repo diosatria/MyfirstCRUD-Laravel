@@ -30,7 +30,7 @@
         <label><h5>Ubah Jumlah Barang : </h5></label> <br>
         <div class="input-group mb-3">
             <span class="input-group-text id" id="basic-addon1"><label>Jumlah</label></span>
-            <input type="text" class="form-control" aria-label="Username"  name="qty" aria-describedby="basic-addon1" placeholder="Ubah Jumlah Prouk" value="{{$product->qty}}" />
+            <input type="text" onkeypress = "return hanyaAngka(event)" maxlength="3" class="form-control" aria-label="Username"  name="qty" aria-describedby="basic-addon1" placeholder="Ubah Jumlah Prouk" value="{{$product->qty}}" />
         </div>
         @error('qty')
         <div class="alert alert-danger">{{ "* Harap Isi Bagian Jumlah" }}</div>
@@ -39,7 +39,7 @@
         <label><h5>Masukkan Harga Barang : </h5></label> <br>
         <div class="input-group mb-3">
             <span class="input-group-text">Harga</span>
-            <input type="text" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" placeholder="Ubah Harga Produk" value="{{$product->price}}" />
+            <input type="text"  onkeypress="return hanyaAngka(event)" maxlength="8" class="form-control" aria-label="Amount (to the nearest dollar)" name="price" placeholder="Ubah Harga Produk" value="{{$product->price}}" />
             <span class="input-group-text">.00</span>
         </div>
         @error('price')
@@ -48,8 +48,8 @@
 
         <label><h5>Ubah Deskripsi Produk :</h5></label> <br>
         <div class="input-group">
-            <span class="input-group-text">Deskripsi</span>
-            <textarea type = "text" class="form-control" aria-label="With textarea" name="description" placeholder="Ubah Deskripsi Produk" value="{{$product->description}}"></textarea>
+        <span class="input-group-text">Deskripsi</span>
+            <textarea type = "text" class="form-control" aria-label="With textarea" name="description" placeholder="Ubah Deskripsi Produk" value="{{$product->description}}">{{ $product->description }}</textarea>
         </div>
         @error('description')
             <div class="alert alert-danger">{{ "* Harap Isi Bagian Deskripsi" }} </div>
@@ -61,4 +61,5 @@
         </div>
     </form>
 </div>
+@include('partials.prop')
 @endsection

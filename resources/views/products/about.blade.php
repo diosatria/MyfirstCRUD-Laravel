@@ -10,7 +10,7 @@
             <img src="img/{{ $gambar }}" alt=" {{ $nama }} " width="200px" class="rounded-circle" >
             <style>
                 .rounded-circle {
-                    border-top: 20px solid  #ff9933;
+                    border-top: 10px solid  #ff9933;
                     border-right: 20px solid transparent;
                     border-left: 20px solid transparent;
                 }
@@ -18,9 +18,9 @@
         </div>
 
         <p style="font-size: 28px;">{{ 'Know Me More : ' }}</p>
-              <a href="/experience" class="btn btn-outline-primary my-3">Experience</a>
-          </div>
-          <style>
+            <a href="/experience" class="btn btn-outline-primary my-3">Experience</a>
+        </div>
+        <style>
                     .rounded-circle {
                     border: 20px solid #fff;
                     box-shadow: 0 / 0 / 8px rgba(17, 17, 17, .6);

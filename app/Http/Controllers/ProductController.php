@@ -36,6 +36,9 @@ class ProductController extends Controller
             'description' => 'nullable'
         ]);
 
+        $data['description'] = $data['description'] ?? "";
+
+
         $newProduct = Product::create($data);
 
         return redirect(route('product.index'));
@@ -43,6 +46,7 @@ class ProductController extends Controller
 
     public function edit(Product $product)
     {
+
         return view('products.edit', ['product' => $product]);
     }
 
@@ -54,6 +58,8 @@ class ProductController extends Controller
             'price' => 'required|decimal:0,2',
             'description' => 'nullable'
         ]);
+
+        $data['description'] = $data['description'] ?? "";
 
         $product->update($data);
 
